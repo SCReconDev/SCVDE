@@ -20,7 +20,7 @@ sudo apt install -y \
 Install git LFS
 
 ```bash
-git install LFS
+git lfs install
 ```
 
 Clone the repository:
