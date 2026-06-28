@@ -151,7 +151,7 @@ After creating the key execute the following command:
 ```bash
 export MISTRAL_API_KEY="Your API key"
 ```
-Create a C dataset from the backend folder with active venv:
+Create a C dataset from the backend folder with active venv. Execute this command in the same shell session as the export command. 
 
 ```bash
 python -m app.cli datasets generate-mistral \
