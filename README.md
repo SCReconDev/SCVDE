@@ -14,7 +14,7 @@ sudo apt update
 sudo apt install -y \
   git curl wget unzip ca-certificates build-essential \
   python3.12 python3.12-venv python3.12-dev pipx \
-  cppcheck clang clang-tidy
+  cppcheck clang clang-tidy git-lfs
 ```
 
 Install git LFS
