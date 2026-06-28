@@ -1,0 +1,18 @@
+id: hf_codebert_devign
+name: CodeBERT Devign Vulnerability Detector
+backend: huggingface
+task: binary_classification
+vulnerability_type: general
+
+source_model: mahdin70/codebert-devign-code-vulnerability-detector
+tokenizer_source: microsoft/codebert-base
+
+paths:
+  model_dir: .
+
+input:
+  max_length: 512
+
+output:
+  vulnerable_label: 1
+  threshold: 0.5

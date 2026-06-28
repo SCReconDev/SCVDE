@@ -1,0 +1,13 @@
+id: hf_securebert2_vuln
+name: SecureBERT 2.0 Vulnerability Detector
+backend: huggingface
+task: binary_classification
+vulnerability_type: general
+source_model: cisco-ai/SecureBERT2.0-code-vuln-detection
+paths:
+  model_dir: .
+input:
+  max_length: 512
+output:
+  vulnerable_label: 1
+  threshold: 0.5

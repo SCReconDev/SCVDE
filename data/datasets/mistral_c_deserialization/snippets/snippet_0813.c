@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <json-c/json.h>
+
+typedef struct {
+    char* key;
+    char* value;
+} CacheEntry;
+
+void deserialize_cache_entry(const char* json_str, CacheEntry* entry) {
+    struct json_object* parsed_json;
+    struct json_object* key;
+    struct json_object* value;
+
+    parsed_json = json_tokener_parse(json_str);
+    if (parsed_json == NULL) {
+        fprintf(stderr, "Error parsing JSON\n");
+        return;
+    }
+
+    if (json_object_object_get_ex(parsed_json, "key", &key)) {
+        entry->key = strdup(json_object_get_string(key));
+    }
+
+    if (json_object_object_get_ex(parsed_json, "value", &value)) {
+        entry->value = strdup(json_object_get_string(value));
+    }
+
+    json_object_put(parsed_json);
+}
+
+void process_cache_entry(CacheEntry* entry) {
+    printf("Key: %s\n", entry->key);
+    printf("Value: %s\n", entry->value);
+}
+
+int main() {
+    const char* json_str = "{\"key\":\"user_prefs\",\"value\":\"dark_mode\"}";
+    CacheEntry entry;
+
+    deserialize_cache_entry(json_str, &entry);
+    process_cache_entry(&entry);
+
+    free(entry.key);
+    free(entry.value);
+    return 0;
+}

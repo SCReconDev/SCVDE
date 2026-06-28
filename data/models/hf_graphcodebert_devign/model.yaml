@@ -1,0 +1,13 @@
+id: hf_graphcodebert_devign
+name: GraphCodeBERT Devign Vulnerability Detector
+backend: huggingface
+task: binary_classification
+vulnerability_type: general
+source_model: mahdin70/graphcodebert-devign-code-vulnerability-detector
+paths:
+  model_dir: .
+input:
+  max_length: 512
+output:
+  vulnerable_label: 1
+  threshold: 0.5

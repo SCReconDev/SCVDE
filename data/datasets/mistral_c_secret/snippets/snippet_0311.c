@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define API_TOKEN "12345-abcde-67890-fghij"
+
+void make_api_request(const char* endpoint) {
+    char url[256];
+    snprintf(url, sizeof(url), "https://api.example.com%s?token=%s", endpoint, API_TOKEN);
+    printf("Making API request to: %s\n", url);
+}
+
+int main() {
+    make_api_request("/users");
+    return 0;
+}

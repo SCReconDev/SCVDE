@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    char *api_url;
+    char *bearer_token;
+} ThirdPartyIntegration;
+
+ThirdPartyIntegration* create_third_party_integration(const char *api_url, const char *bearer_token) {
+    ThirdPartyIntegration *integration = (ThirdPartyIntegration*)malloc(sizeof(ThirdPartyIntegration));
+    integration->api_url = strdup(api_url);
+    integration->bearer_token = strdup(bearer_token);
+    return integration;
+}
+
+void destroy_third_party_integration(ThirdPartyIntegration *integration) {
+    free(integration->api_url);
+    free(integration->bearer_token);
+    free(integration);
+}
+
+void call_third_party_api(ThirdPartyIntegration *integration, const char *endpoint) {
+    printf("Calling third-party API at %s%s\n", integration->api_url, endpoint);
+    printf("Using bearer token: %s\n", integration->bearer_token);
+}
+
+int main() {
+    const char *bearer_token = getenv("BEARER_TOKEN");
+    if (bearer_token == NULL) {
+        fprintf(stderr, "BEARER_TOKEN environment variable not set\n");
+        return 1;
+    }
+
+    ThirdPartyIntegration *integration = create_third_party_integration("https://api.thirdparty.com", bearer_token);
+    call_third_party_api(integration, "/data");
+    destroy_third_party_integration(integration);
+
+    return 0;
+}

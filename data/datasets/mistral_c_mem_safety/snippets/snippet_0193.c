@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void allocate_memory(int size) {
+    int *ptr = (int *)malloc(size * sizeof(int));
+    for (int i = 0; i < size; i++) {
+        ptr[i] = i;
+    }
+    printf("Memory allocated successfully.\n");
+}
+
+int main() {
+    int user_size;
+    printf("Enter the size of memory to allocate: ");
+    scanf("%d", &user_size);
+    allocate_memory(user_size);
+    return 0;
+}

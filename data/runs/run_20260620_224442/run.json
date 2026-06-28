@@ -1,0 +1,18 @@
+{
+  "id": "run_20260620_224442",
+  "dataset_id": "mistral_c_secret",
+  "detectors": [
+    "hf_securebert2_vuln",
+    "hf_graphcodebert_devign",
+    "hf_codebert_devign",
+    "semgrep",
+    "cppcheck",
+    "flawfinder",
+    "clang_static_analyzer",
+    "clang_tidy_security"
+  ],
+  "status": "completed",
+  "created_at": "2026-06-20T22:44:42+00:00",
+  "completed_at": "2026-06-21T00:30:42+00:00",
+  "metadata": {}
+}

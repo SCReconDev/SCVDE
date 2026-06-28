@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void allocate_and_forget(int size) {
+    int *ptr = (int *)malloc(size * sizeof(int));
+    if (ptr != NULL) {
+        for (int i = 0; i < size; i++) {
+            ptr[i] = i;
+        }
+    }
+}
+
+int main() {
+    allocate_and_forget(10);
+    return 0;
+}

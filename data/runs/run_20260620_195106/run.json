@@ -1,0 +1,18 @@
+{
+  "id": "run_20260620_195106",
+  "dataset_id": "mistral_c_deserialization",
+  "detectors": [
+    "hf_securebert2_vuln",
+    "hf_graphcodebert_devign",
+    "hf_codebert_devign",
+    "semgrep",
+    "cppcheck",
+    "flawfinder",
+    "clang_static_analyzer",
+    "clang_tidy_security"
+  ],
+  "status": "completed",
+  "created_at": "2026-06-20T19:51:06+00:00",
+  "completed_at": "2026-06-20T21:38:47+00:00",
+  "metadata": {}
+}
