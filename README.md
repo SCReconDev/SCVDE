@@ -1,6 +1,6 @@
 # SCVDE – Local Setup
 
-SCVDE compares static-analysis tools and ML models against vulnerability datasets. The project contains a FastAPI backend and a React/Vite frontend.
+SCVDE is an extensible, adapter based framework for evaluating source code vulnerability scanners. It compares static-analysis tools and ML models against vulnerability datasets. The project contains a FastAPI backend and a React/Vite frontend.
 
 
 ## 1. Install system packages
